@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 04:52:39 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/18 00:55:19 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/02/18 02:38:16 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,44 @@
 #include "includes.h"
 #include "push_swap.h"
 
-void	reverse_rotate(int *stack, int len)
-{	
-	int	temp;
+int	reverse_rotate_a(t_data *data)
+{
 	int	i;
 
-	i = 0;
-	temp = stack[len];
-	while (i < len)
+	i = data->len_a - 1;
+	if (data->stack_a)
 	{
-		stack[i + 1] = stack[i];
-		i++;
+		data->stack_a = add_front(data->stack_a, data->len_a, data->stack_a[i]);
+		if (!data->stack_a)
+			return (0);
+		data->len_a++;
+		data->stack_a = del_back(data->stack_a, data->len_a);
+		if (!data->stack_a)
+			return (0);
+		data->len_a--;
 	}
-	stack[0] = temp;
+	else
+		return (0);
+	return (write(1, "rra\n", 4));
 }
 
-void	reverse_rotate_r(int *stack_a, int *stack_b)
-{	
-	t_data	*data;
-	
-	data = _data();
-	reverse_rotate(stack_a, data->len_a);
-	reverse_rotate(stack_b, data->len_b);
+int	reverse_rotate_b(t_data *data)
+{
+	int	i;
+
+	i = data->len_b - 1;
+	if (data->stack_b)
+	{
+		data->stack_b = add_front(data->stack_b, data->len_b, data->stack_b[i]);
+		if (!data->stack_a)
+			return (0);
+		data->len_b++;
+		data->stack_b = del_back(data->stack_b, data->len_b);
+		if (!data->stack_b)
+			return (0);
+		data->len_b--;
+	}
+	else
+		return (0);
+	return (write(1, "rrb\n", 4));
 }
