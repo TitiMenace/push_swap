@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 04:33:59 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/18 01:16:36 by tschecro         ###   ########.fr       */
+/*   Created: 2023/02/18 00:45:08 by tschecro          #+#    #+#             */
+/*   Updated: 2023/02/18 00:47:51 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "struct.h"
-#include "includes.h"
-#include "push_swap.h"
+#ifndef STRUCT_H
+# define STRUCT_H
 
-int	rotate_a(t_data *data)
+typedef struct s_data
 {
-	if (data->stack_a)
-	{
-		data->stack_a = add_back(data->stack_a, data->len_a, data->stack_a[0]);
-		
-	}
-}
+	int	*stack_a;
+	int	*stack_b;
+	int	len_a;
+	int len_b;
+}			t_data;
+
+#endif
+

@@ -6,10 +6,12 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 01:14:09 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/17 01:59:46 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/02/18 00:56:06 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "struct.h"
+#include "includes.h"
 #include "push_swap.h"
 
 void	ft_bzero(void *ptr, int size)

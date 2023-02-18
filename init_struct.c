@@ -6,10 +6,12 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 02:03:16 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/17 02:28:39 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/02/18 00:54:19 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "struct.h"
+#include "includes.h"
 #include "push_swap.h"
 
 

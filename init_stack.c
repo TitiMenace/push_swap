@@ -6,11 +6,14 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 08:02:56 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/16 02:49:29 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/02/18 00:53:55 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "struct.h"
+#include "includes.h"
 #include "push_swap.h"
+
 
 int	check_av(char *str)
 {

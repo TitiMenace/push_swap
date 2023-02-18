@@ -5,42 +5,76 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 08:47:35 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/17 04:51:35 by tschecro         ###   ########.fr       */
+/*   Created: 2023/02/18 00:49:53 by tschecro          #+#    #+#             */
+/*   Updated: 2023/02/18 00:49:57 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <unistd.h>
-#include <stdlib.h>
-
-typedef struct s_data
-{
-	int	*stack_a;
-	int	*stack_b;
-	int	len_a;
-	int len_b;
-}			t_data;
-
+/* -------------------------------------------------------------------------- */
+/*                           FILE = ./init_stack.c                            */
+/* -------------------------------------------------------------------------- */
 int		check_av(char *str);
-void	ft_putchar(char c);
-void	ft_putnbr(int nb);
+int		ft_strlen(char *str);
+int		check_m(char *str);
 int		ft_atoi(char *str);
 int		*init_stack(int ac, char **str);
-int		ft_strlen(char *str);
-int		ft_strcmp(char *s1, char *s2);
 
+/* -------------------------------------------------------------------------- */
+/*                           FILE = ./singletone.c                            */
+/* -------------------------------------------------------------------------- */
 void	ft_bzero(void *ptr, int size);
 t_data	*_data(void);
+
+/* -------------------------------------------------------------------------- */
+/*                            FILE = ./main_test.c                            */
+/* -------------------------------------------------------------------------- */
+int	main();
+
+/* -------------------------------------------------------------------------- */
+/*                         FILE = ./reverse_rotate.c                          */
+/* -------------------------------------------------------------------------- */
+void	reverse_rotate(int *stack, int len);
+void	reverse_rotate_r(int *stack_a, int *stack_b);
+
+/* -------------------------------------------------------------------------- */
+/*                           FILE = ./swap_moves.c                            */
+/* -------------------------------------------------------------------------- */
+void	swap(int *stack);
+void	sswap(int *stack_a, int *stack_b);
+
+/* -------------------------------------------------------------------------- */
+/*                         FILE = ./push_swap_utils.c                         */
+/* -------------------------------------------------------------------------- */
+int		ft_strcmp(char *s1, char *s2);
+void	ft_putchar(char c);
+void	ft_putnbr(int nb);
+
+/* -------------------------------------------------------------------------- */
+/*                           FILE = ./push_moves.c                            */
+/* -------------------------------------------------------------------------- */
+int		push_a(t_data *data);
+int		push_b(t_data *data);
+
+/* -------------------------------------------------------------------------- */
+/*                           FILE = ./moves_utils.c                           */
+/* -------------------------------------------------------------------------- */
+int		*add_front(int *stack, int len, int nb);
+int		*add_back(int *stack, int len, int nb);
+int		*del_front(int *stack, int len);
+int 	*del_back(int *stack, int len);
+
+/* -------------------------------------------------------------------------- */
+/*                             FILE = ./rotate.c                              */
+/* -------------------------------------------------------------------------- */
+void	rotate(int *stack, int len);
+
+/* -------------------------------------------------------------------------- */
+/*                           FILE = ./init_struct.c                           */
+/* -------------------------------------------------------------------------- */
 void	init_struct(int ac, char **av);
 
-void	swap(int *stack);
-void	swap_s(int *stack_a, int *stack_b);
 
-void	rotate(int *stack, int len);
-void	rotate_r(int *stack_a, int *stack_b);
-
-void	push(int *stack_1, int *stack_2, int len_1, int len_2);
 #endif

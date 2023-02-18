@@ -6,31 +6,46 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 05:31:17 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/17 04:45:21 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/02/18 00:58:59 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "struct.h"
+#include "includes.h"
 #include "push_swap.h"
 
-void	push(int *stack_1, int *stack_2, int len_1, int len_2)
+int	push_a(t_data *data)
 {
-	int	i;
-	int	temp;
-	
-	i = 0;
-	while (i < len_2)
+	if (data->len_b)
 	{
-		temp = stack_2[i + 1];
-		stack_2[i + 1] = stack_2[i];
-		i++;
+		data->stack_a = add_front(data->stack_a, data->len_a, data->stack_b[0]);
+		if (!data->stack_a)
+			return (0);
+		data->len_a++;
+		data->stack_b = del_front(data->stack_b, data->len_b);
+		if (!data->stack_b)
+			return (0);
+		data->len_b--;
 	}
-	stack_2[0] = stack_1[0];
-	i = len_1;
-	while (i > 1)
+	else
+		return (0);
+	return (write(1, "pa\n", 3));
+}
+
+int	push_b(t_data *data)
+{
+	if (data->len_a)
 	{
-		temp = stack_1[i - 1];
-		stack_1[i - 1] = stack_1[i];
-		i--;
+		data->stack_b = add_front(data->stack_b, data->len_b, data->stack_a[0]);
+		if (!data->stack_b)
+			return (0);
+		data->len_b++;
+		data->stack_a = del_front(data->stack_a, data->len_a);
+			if (!data->stack_a)
+				return (0);
+		data->len_a--;
 	}
-	((char *)stack_1)[len_2] = '\0';
+	else
+		return (0);
+	return (write(1, "pb\n", 3));
 }

@@ -6,10 +6,12 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 04:52:39 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/17 04:58:02 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/02/18 00:55:19 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "struct.h"
+#include "includes.h"
 #include "push_swap.h"
 
 void	reverse_rotate(int *stack, int len)

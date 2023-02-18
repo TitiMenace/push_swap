@@ -6,10 +6,12 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 10:56:24 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/16 02:28:17 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/02/18 00:54:58 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "struct.h"
+#include "includes.h"
 #include "push_swap.h"
 
 int	ft_strcmp(char *s1, char *s2)
