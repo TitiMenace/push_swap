@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 10:56:24 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/24 21:19:00 by tschecro         ###   ########.fr       */
+/*   Created: 2023/02/24 18:47:53 by tschecro          #+#    #+#             */
+/*   Updated: 2023/02/24 20:57:33 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,31 @@
 #include "includes.h"
 #include "ft_push_swap.h"
 
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
 
+int	main(int ac, char **av)
+{
+	t_data	*data;
+	int		i;
+
+	if (ac < 2)
+	{
+		write(1,"Missing Args !", 14);
+		return (-1);
+	}
+	init_struct(ac, av);
+	data = _data();
+	data->stack_a = init_stack(ac, av);
+	if (!data->stack_a)
+	{
+		write(1, "Wrong Args !", 12);
+		return (-1);
+	}
 	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i])
+	while (i < ac - 1)
+	{
+		ft_putnbr(data->stack_a[i]);
+		write(1, " ", 1);
 		i++;
-	return (s1[i] - s2[i]);
-}
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putnbr(int nb)
-{
-	unsigned int	i;
-
-	i = 0;
-	if (nb < 0)
-	{
-		i = nb * -1;
-		ft_putchar('-');
 	}
-	else
-		i = nb;
-	if (i <= 9)
-		ft_putchar(i + '0');
-	else
-	{
-		ft_putnbr(i / 10);
-		ft_putnbr(i % 10);
-	}
+	return (1);
 }

@@ -6,13 +6,13 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 08:02:56 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/18 00:53:55 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/02/24 21:15:06 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "includes.h"
-#include "push_swap.h"
+#include "ft_push_swap.h"
 
 
 int	check_av(char *str)
@@ -24,7 +24,7 @@ int	check_av(char *str)
 		i++;
 	else
 		return (-1);
-	while (str[i] && str[i] > '0' && str[i] < '9')
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
 		i++;
 	if (str[i] == '\0')
 		return (1);
@@ -51,6 +51,7 @@ int	check_m(char *str)
 	char	*min;
 
 	count = ft_strlen(str);
+	dprintf(2, " %d ", count);
 	max = "2147483647";
 	min = "-2147483648";
 	i = 0;
@@ -70,7 +71,7 @@ int	check_m(char *str)
 		if (count > 10)
 			return (-1);
 		else
-			return (ft_strcmp(max, str));
+			return (ft_strcmp(str, max));
 	}
 }		
 
@@ -103,23 +104,23 @@ int	*init_stack(int ac, char **str)
 	int	*stack_a;
 	int	i;
 
-	stack_a = malloc(sizeof(int) * ac);
+	stack_a = malloc(sizeof(int) * ac - 1);
 	if (!stack_a)
 		return (NULL);
 	i = 0;
-	while (str[i])
+	while (str[i + 1])
 	{
-		if (check_av(str[i]) == -1)
+		if (check_av(str[i + 1]) == -1)
 		{
 			free(stack_a);
 			return (NULL);
 		}
-		if (check_m(str[i]) < 0)
+		if (check_m(str[i + 1]) < 0)
 		{
 			free(stack_a);
 			return (NULL);
 		}
-		stack_a[i] = ft_atoi(str[i]);
+		stack_a[i] = ft_atoi(str[i + 1]);
 		i++;
 	}
 	return (stack_a);

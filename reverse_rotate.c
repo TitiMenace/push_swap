@@ -6,13 +6,13 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 04:52:39 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/18 02:38:16 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/02/24 20:07:49 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "includes.h"
-#include "push_swap.h"
+#include "ft_push_swap.h"
 
 int	reverse_rotate_a(t_data *data)
 {

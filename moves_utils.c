@@ -6,12 +6,12 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 23:58:52 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/18 00:52:25 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/02/24 20:10:22 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "struct.h"
 #include "includes.h"
-#include "push_swap.h"
+#include "ft_push_swap.h"
 
 int	*add_front(int *stack, int len, int nb)
 {
@@ -41,6 +41,7 @@ int	*add_back(int *stack, int len, int nb)
 	out = malloc(sizeof(int) * len + 1);
 	if (!out)
 		return (NULL);
+	i = 0;
 	while (i < len)
 	{
 		out[i] = stack[i];
@@ -79,6 +80,7 @@ int *del_back(int *stack, int len)
 	out = malloc(sizeof(int) * len - 1);
 	if (!out)
 		return (NULL);
+	i = 0;
 	while (i < len - 1)
 	{	
 		out[i] = stack[i];
