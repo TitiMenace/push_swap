@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 08:02:56 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/24 21:15:06 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/02/24 21:43:36 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ int	check_m(char *str)
 	char	*min;
 
 	count = ft_strlen(str);
-	dprintf(2, " %d ", count);
 	max = "2147483647";
 	min = "-2147483648";
 	i = 0;
@@ -71,7 +70,7 @@ int	check_m(char *str)
 		if (count > 10)
 			return (-1);
 		else
-			return (ft_strcmp(str, max));
+			return (ft_strcmp(max, str));
 	}
 }		
 
