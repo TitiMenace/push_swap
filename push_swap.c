@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 18:47:53 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/24 22:53:27 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/02 03:45:43 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,15 @@ int	main(int ac, char **av)
 	if (ac < 2)
 	{
 		write(1,"Missing Args !", 14);
-		return (-1);
+		return (1);
 	}
-	init_struct(ac, av);
 	data = _data();
-	data->stack_a = init_stack(ac, av);
-	if (!data->stack_a)
+	if (!init_struct(ac - 1))
+		return (1);
+	if (!init_stack(av))
 	{
 		write(1, "Wrong Args !", 12);
-		return (-1);
+		return (1);
 	}
 	data->len_a = ac - 1;
 	i = 0;
@@ -49,5 +49,5 @@ int	main(int ac, char **av)
 		write(1, " ", 1);
 		i++;
 	}
-	return (1);
+	return (0);
 }

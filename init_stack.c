@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 08:02:56 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/24 21:43:36 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/02 00:57:07 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,29 +98,27 @@ int	ft_atoi(char *str)
 
 
 
-int	*init_stack(int ac, char **str)
+bool	init_stack(char **str)
 {
-	int	*stack_a;
+	t_data	*data;
 	int	i;
 
-	stack_a = malloc(sizeof(int) * ac - 1);
-	if (!stack_a)
-		return (NULL);
+	data = _data();
 	i = 0;
 	while (str[i + 1])
 	{
 		if (check_av(str[i + 1]) == -1)
 		{
-			free(stack_a);
-			return (NULL);
+			free(data->stack_a);
+			return (false);
 		}
 		if (check_m(str[i + 1]) < 0)
 		{
-			free(stack_a);
-			return (NULL);
+			free(data->stack_a);
+			return (false);
 		}
-		stack_a[i] = ft_atoi(str[i + 1]);
+		data->stack_a[i] = ft_atoi(str[i + 1]);
 		i++;
 	}
-	return (stack_a);
+	return (true);
 }

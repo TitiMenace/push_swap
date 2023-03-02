@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   singletone.c                                       :+:      :+:    :+:   */
+/*   debug_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 01:14:09 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/02 00:56:50 by tschecro         ###   ########.fr       */
+/*   Created: 2023/03/02 03:11:39 by tschecro          #+#    #+#             */
+/*   Updated: 2023/03/02 03:14:46 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,14 @@
 #include "includes.h"
 #include "ft_push_swap.h"
 
-void	ft_bzero(void *ptr, int size)
+void	print_tab(int *stack, int len)
 {
 	int	i;
 
 	i = 0;
-	while (i < size)
+	while (i < len)
 	{
-		((unsigned char *)ptr)[i] = 0;
+		dprintf(2, "-%d-", stack[i]);
 		i++;
 	}
-}
-
-t_data	*_data(void)
-{
-	static t_data data;
-
-	return (&data);
 }

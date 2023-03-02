@@ -6,13 +6,14 @@
 #    By: tschecro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 01:52:49 by tschecro          #+#    #+#              #
-#    Updated: 2023/02/24 22:24:24 by tschecro         ###   ########.fr        #
+#    Updated: 2023/03/02 03:15:37 by tschecro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC		=	./init_struct.c ./moves_utils.c ./push_swap_utils.c \
 			./singletone.c ./push_moves.c  ./reverse_rotate.c \
-			./init_stack.c ./rotate.c ./swap_moves.c ./ps_algorithms.c
+			./init_stack.c ./rotate.c ./swap_moves.c ./ps_algorithms.c \
+			debug_utils.c
 
 
 HEADER	=	ft_push_swap.h \
