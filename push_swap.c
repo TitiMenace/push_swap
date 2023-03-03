@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 18:47:53 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/02 03:45:43 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/03 04:52:26 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,13 @@
 
 int	push_swap(int ac)
 {
+	t_data	*data;
+
 	if (ac == 4)
 		three_params();
+	else
+		algo();
+	data = _data();
 	return (1);
 }
 
@@ -43,11 +48,9 @@ int	main(int ac, char **av)
 	data->len_a = ac - 1;
 	i = 0;
 	push_swap(ac);
-	while (i < ac - 1)
-	{
-		ft_putnbr(data->stack_a[i]);
-		write(1, " ", 1);
-		i++;
-	}
+	dprintf(2, "stack_a--->");
+	print_tab(data->stack_a, data->len_a);
+	dprintf(2, "stack_b--->");
+	print_tab(data->stack_b, data->len_b);
 	return (0);
 }
