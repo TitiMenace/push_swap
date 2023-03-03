@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 01:15:45 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/03 05:09:40 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/03 05:35:06 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ int	parsing_index(int nb, int stack_size)
 
 	data = _data();
 	i = 0;
+	
+	//check avec plusieurs variables une pour le count pour savoir quand 
+	//on a parcouru toute la roue et une pour retenir l'index si on 
+	//doit boucler sur le debut une nouvelle fois avec un start ou pas sur le
+	//nombre le plus petit...
 	while (i < stack_size)
 	{
 		if (nb > data->stack_a[i] && nb < data->stack_a[i + 1])
