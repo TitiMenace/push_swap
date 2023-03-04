@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 01:15:45 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/03 05:35:06 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/04 07:00:44 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,61 @@
 #include "includes.h"
 #include "ft_push_swap.h"
 
+
 int	parsing_index(int nb, int stack_size)
 {
 	t_data	*data;
-	int	i;
+	int		i;
+	int		count;
 
 	data = _data();
-	i = 0;
-	
-	//check avec plusieurs variables une pour le count pour savoir quand 
-	//on a parcouru toute la roue et une pour retenir l'index si on 
-	//doit boucler sur le debut une nouvelle fois avec un start ou pas sur le
-	//nombre le plus petit...
-	while (i < stack_size)
+	find_min();
+	find_max();
+	i = data->pos_min;
+	dprintf(2, "\nmin = %d\n", i);
+	count = 0;
+	if (nb > data->val_max)
 	{
-		if (nb > data->stack_a[i] && nb < data->stack_a[i + 1])
+		if (data->pos_max == stack_size - 1)
+		{
+			data->index = 0;
+			return (1);
+		}
+		else
+		{
+			data->index = data->pos_max + 1;
+			return (1);
+		}
+	}	
+	if (nb < data->val_min)
+	{
+		if (data->pos_min == 0)
+		{
+			data->index = 0;
+			return (1);
+		}
+		else
+		{
+			data->index = data->pos_max - 1;
+			return (1);
+		}
+	}
+	
+	while (count < stack_size)
+	{
+		if (i == stack_size - 1 && (nb > data->stack_a[i] && nb < data->stack_a[0]))
+		{
+			i = -1;
 			break;
+		}
+		else if (i == stack_size - 1)
+			i = 0;
+		else if (nb > data->stack_a[i] && nb < data->stack_a[i + 1])
+			break;
+		count++;
 		i++;
 	}
-	if (i == stack_size)
-		data->index = 0;
-	else
-		data->index = i;
+	data->index = i + 1;
 	return (1);
 }
 
@@ -73,6 +106,7 @@ int	algo(void)
 	{
 		insert_sort();
 		push_a(data);
+		print_stacks(data->stack_a, data->stack_b, data->len_a, data->len_b);
 	}
 	return (1);
 }

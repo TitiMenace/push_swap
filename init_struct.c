@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 02:03:16 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/03 04:45:19 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/04 04:59:59 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,9 @@ bool	init_struct(int stack_size)
 	data->len_a = stack_size;
 	data->len_b = 0;
 	data->index = 0;
+	data->val_min = 0;
+	data->pos_min = 0;
+	data->val_max = 0;
+	data->pos_max = 0;
 	return (true);
 }
