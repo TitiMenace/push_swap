@@ -68,7 +68,10 @@ int	parsing_index(int nb, int stack_size)
 		count++;
 		i++;
 	}
+	if (i == stack_size - 1 && (!(nb > data->stack_a[i] && nb < data->stack_a[i + 1])))
+		i = 0;
 	data->index = i + 1;
+	dprintf(2, "\nindex = %d\n", data->index);
 	return (1);
 }
 

@@ -24,7 +24,7 @@ OBJ		=	$(SRC:.c=.o)
 
 NAME	=	libpushswap.a	
 
-CC		=	cc
+GCC		=	gcc
 
 all		:	$(NAME)
 
@@ -32,7 +32,7 @@ $(NAME)	:	$(OBJ)
 			ar rc $(NAME) $(OBJ)
 
 %.o		:	%.c
-			$(CC) -Wall -Wextra -Werror -g -c $< -o $@
+			$(GCC) -Wall -Wextra -Werror -g -c $< -o $@
 
 clean	:
 			rm -f $(OBJ)

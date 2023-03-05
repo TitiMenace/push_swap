@@ -16,13 +16,10 @@
 
 int	push_swap(int ac)
 {
-	t_data	*data;
-
 	if (ac == 4)
 		three_params();
 	else
 		algo();
-	data = _data();
 	return (1);
 }
 
@@ -30,14 +27,13 @@ int	push_swap(int ac)
 int	main(int ac, char **av)
 {
 	t_data	*data;
-	int		i;
 
+	data = _data();
 	if (ac < 2)
 	{
 		write(1,"Missing Args !", 14);
 		return (1);
 	}
-	data = _data();
 	if (!init_struct(ac - 1))
 		return (1);
 	if (!init_stack(av))
@@ -46,7 +42,6 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	data->len_a = ac - 1;
-	i = 0;
 	push_swap(ac);
 	dprintf(2, "stack_a--->");
 	print_tab(data->stack_a, data->len_a);
