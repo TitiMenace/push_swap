@@ -14,6 +14,20 @@
 #include "includes.h"
 #include "ft_push_swap.h"
 
+void	rotate_stack(void)
+{
+	t_data *data;
+	int	i;
+
+	data = _data();
+	find_min();
+	i = 0;
+	while (i < data->pos_min)
+	{
+		rotate_a(data);
+		i++;
+	}
+}
 
 int	parsing_index(int nb, int stack_size)
 {
@@ -111,5 +125,6 @@ int	algo(void)
 		push_a(data);
 		print_stacks(data->stack_a, data->stack_b, data->len_a, data->len_b);
 	}
+	rotate_stack();
 	return (1);
 }

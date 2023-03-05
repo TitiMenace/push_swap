@@ -49,6 +49,7 @@ t_data	*_data(void);
 /* -------------------------------------------------------------------------- */
 /*                              FILE = ./algo.c                               */
 /* -------------------------------------------------------------------------- */
+void	rotate_stack(void);
 int	parsing_index(int nb, int stack_size);
 int	insert_sort(void);
 int	algo(void);
