@@ -41,7 +41,7 @@ int	parsing_index(int nb, int stack_size)
 	i = data->pos_min;
 	dprintf(2, "\nmin = %d\n", i);
 	count = 0;
-	if (nb > data->val_max)
+	if (nb >= data->val_max)
 	{
 		if (data->pos_max == stack_size - 1)
 		{
@@ -50,11 +50,16 @@ int	parsing_index(int nb, int stack_size)
 		}
 		else
 		{
-			data->index = data->pos_max + 1;
+			if (data->pos_max == 0)
+			{
+				data->index = stack_size + 1;
+				return (1);
+			}
+			data->index = data->pos_max;
 			return (1);
 		}
 	}	
-	if (nb < data->val_min)
+	if (nb <= data->val_min)
 	{
 		if (data->pos_min == 0)
 		{
@@ -63,26 +68,32 @@ int	parsing_index(int nb, int stack_size)
 		}
 		else
 		{
-			data->index = data->pos_max - 1;
+			dprintf(2, "%d", data->pos_min);
+			dprintf(2, "\nje suis le laitier, mon lait est delicieux\n");
+			data->index = data->pos_min;
 			return (1);
 		}
 	}
 	
 	while (count < stack_size)
 	{
-		if (i == stack_size - 1 && (nb > data->stack_a[i] && nb < data->stack_a[0]))
+		if (i == stack_size - 1 && (nb >= data->stack_a[i] && nb <= data->stack_a[0]))
 		{
 			i = -1;
 			break;
 		}
 		else if (i == stack_size - 1)
+		{
 			i = 0;
-		else if (nb > data->stack_a[i] && nb < data->stack_a[i + 1])
+			count++;
+			continue;
+		}
+		else if (nb >= data->stack_a[i] && nb <= data->stack_a[i + 1])
 			break;
 		count++;
 		i++;
 	}
-	if (i == stack_size - 1 && (!(nb > data->stack_a[i] && nb < data->stack_a[i + 1])))
+	if (i == stack_size - 1 && (!(nb >= data->stack_a[i] && nb <= data->stack_a[i + 1])))
 		i = 0;
 	data->index = i + 1;
 	dprintf(2, "\nindex = %d\n", data->index);

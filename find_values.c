@@ -50,7 +50,7 @@ int	find_max(void)
 	i = 0;
 	while (i < data->len_a)
 	{
-		if (nb < data->stack_a[i])
+		if (nb <= data->stack_a[i])
 		{
 			nb = data->stack_a[i];
 			data->pos_max = i;
@@ -58,6 +58,7 @@ int	find_max(void)
 		i++;
 	}
 	data->val_max = nb;
+	dprintf(2, "\npos_max = %d", data->pos_max);
 	dprintf(2, "\nval_max = %d", nb);
 	return (1);
 }
