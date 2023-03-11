@@ -6,7 +6,7 @@
 #    By: tschecro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 01:52:49 by tschecro          #+#    #+#              #
-#    Updated: 2023/03/04 06:39:59 by tschecro         ###   ########.fr        #
+#    Updated: 2023/03/11 20:13:23 by tschecro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJ		=	$(SRC:.c=.o)
 
 NAME	=	libpushswap.a	
 
-GCC		=	gcc
+CC		=	cc
 
 all		:	$(NAME)
 
@@ -32,7 +32,7 @@ $(NAME)	:	$(OBJ)
 			ar rc $(NAME) $(OBJ)
 
 %.o		:	%.c
-			$(GCC) -Wall -Wextra -Werror -g -c $< -o $@
+			$(CC) -Wall -Wextra -Werror -g -c $< -o $@
 
 clean	:
 			rm -f $(OBJ)

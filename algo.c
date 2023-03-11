@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 01:15:45 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/04 07:00:44 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/11 20:54:36 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ int	parsing_index(int nb, int stack_size)
 	find_min();
 	find_max();
 	i = data->pos_min;
+//	dprintf(2, "\nval min : %d\n", data->val_min);
+//	dprintf(2, "pos min : %d\n", data->pos_min);
+//	dprintf(2, "val max : %d\n", data->val_max);
+//	dprintf(2, "pos max : %d\n", data->pos_max);
 	if (nb >= data->val_max)
 	{
 		if (data->pos_max == stack_size - 1)
@@ -53,7 +57,7 @@ int	parsing_index(int nb, int stack_size)
 				data->index = stack_size + 1;
 				return (1);
 			}
-			data->index = data->pos_max;
+			data->index = data->pos_max + 1;
 			return (1);
 		}
 	}	
@@ -70,7 +74,7 @@ int	parsing_index(int nb, int stack_size)
 			return (1);
 		}
 	}
-	
+	count = 0;
 	while (count < stack_size)
 	{
 		if (i == stack_size - 1 && (nb >= data->stack_a[i] && nb <= data->stack_a[0]))
@@ -129,6 +133,7 @@ int	algo(void)
 	{
 		insert_sort();
 		push_a(data);
+//	print_stacks(data->stack_a, data->stack_b, data->len_a, data->len_b);
 	}
 	rotate_stack();
 	return (1);
