@@ -39,8 +39,6 @@ int	parsing_index(int nb, int stack_size)
 	find_min();
 	find_max();
 	i = data->pos_min;
-	dprintf(2, "\nmin = %d\n", i);
-	count = 0;
 	if (nb >= data->val_max)
 	{
 		if (data->pos_max == stack_size - 1)
@@ -68,8 +66,6 @@ int	parsing_index(int nb, int stack_size)
 		}
 		else
 		{
-			dprintf(2, "%d", data->pos_min);
-			dprintf(2, "\nje suis le laitier, mon lait est delicieux\n");
 			data->index = data->pos_min;
 			return (1);
 		}
@@ -96,7 +92,6 @@ int	parsing_index(int nb, int stack_size)
 	if (i == stack_size - 1 && (!(nb >= data->stack_a[i] && nb <= data->stack_a[i + 1])))
 		i = 0;
 	data->index = i + 1;
-	dprintf(2, "\nindex = %d\n", data->index);
 	return (1);
 }
 
@@ -134,7 +129,6 @@ int	algo(void)
 	{
 		insert_sort();
 		push_a(data);
-		print_stacks(data->stack_a, data->stack_b, data->len_a, data->len_b);
 	}
 	rotate_stack();
 	return (1);

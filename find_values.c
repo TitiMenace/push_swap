@@ -34,7 +34,6 @@ int	find_min(void)
 		i++;
 	}
 	data->val_min = nb;
-	dprintf(2, "\nval_min = %d", nb);
 	return (1);
 }
 
@@ -58,7 +57,5 @@ int	find_max(void)
 		i++;
 	}
 	data->val_max = nb;
-	dprintf(2, "\npos_max = %d", data->pos_max);
-	dprintf(2, "\nval_max = %d", nb);
 	return (1);
 }
