@@ -74,6 +74,12 @@ void	ft_putchar(char c);
 void	ft_putnbr(int nb);
 
 /* -------------------------------------------------------------------------- */
+/*                           FILE = ./cost_calcul.c                           */
+/* -------------------------------------------------------------------------- */
+int	cost_loop(void);
+int	cost_calcul(int value, int index, t_cost *cost);
+
+/* -------------------------------------------------------------------------- */
 /*                           FILE = ./push_moves.c                            */
 /* -------------------------------------------------------------------------- */
 int	push_a(t_data *data);
@@ -102,6 +108,7 @@ int	three_params(void);
 /*                           FILE = ./init_struct.c                           */
 /* -------------------------------------------------------------------------- */
 bool	init_struct(int stack_size);
+void	init_cost(t_cost *cost);
 
 
 #endif

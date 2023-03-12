@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 23:33:12 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/12 05:06:17 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/12 05:15:09 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 #include "ft_push_swap.h"
 
 
-int	cost_loop(int value, int index)
+int	cost_loop(void)
 {
 	t_cost	cost;
-	t_data	*data();
+	t_data	*data;
 	int		i;
 
 	data = _data();
@@ -26,7 +26,7 @@ int	cost_loop(int value, int index)
 	i = 0;
 	while (i < data->len_b)
 	{
-		cost(data->stack[i], i, &cost);
+		cost_calcul(data->stack_b[i], i, &cost);
 		i++;
 	}
 	return (cost.index_nb);
