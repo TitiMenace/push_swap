@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 01:15:45 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/12 05:14:54 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/12 07:01:57 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 #include "includes.h"
 #include "ft_push_swap.h"
 
+
 void	rotate_stack(void)
 {
-	t_data *data;
+	t_data  *data;
 	int	i;
 
 	data = _data();
 	find_min();
 	i = 0;
-	dprintf(2, "\ntest->posmin : %d\n", data->pos_min);
+//	dprintf(2, "\ntest->posmin : %d\n", data->pos_min);
 	if (data->pos_min  < (data->len_a / 2) + 1)
 	{
 		while (i < data->pos_min)
@@ -52,10 +53,10 @@ int	parsing_index(int nb, int stack_size)
 	find_min();
 	find_max();
 	i = data->pos_min;
-	dprintf(2, "\nval min : %d\n", data->val_min);
-	dprintf(2, "pos min : %d\n", data->pos_min);
-	dprintf(2, "val max : %d\n", data->val_max);
-	dprintf(2, "pos max : %d\n", data->pos_max);
+//	dprintf(2, "\nval min : %d\n", data->val_min);
+//	dprintf(2, "pos min : %d\n", data->pos_min);
+//	dprintf(2, "val max : %d\n", data->val_max);
+//	dprintf(2, "pos max : %d\n", data->pos_max);
 	if (nb >= data->val_max)
 	{
 		if (data->pos_max == stack_size - 1)
@@ -67,7 +68,7 @@ int	parsing_index(int nb, int stack_size)
 		{
 			if (data->pos_max == 0)
 			{
-				data->index = stack_size + 1;
+				data->index = 1;
 				return (1);
 			}
 			data->index = data->pos_max + 1;
@@ -120,9 +121,9 @@ int	insert_sort(void)
 
 	data = _data();
 	index = cost_loop();
-	parsing_index(data->stack_b[0], data->len_a);
+	parsing_index(data->stack_b[index], data->len_a);
 	i = 0;
-	dprintf(2, "\nindex : %d\n", data->index);
+//	dprintf(2, "\nindex : %d\n", data->index);
 	if (data->index < (data->len_a / 2) + 1)
 	{
 		while (i < data->index)

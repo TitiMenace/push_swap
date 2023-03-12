@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 02:03:16 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/11 23:17:10 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/12 05:39:46 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ bool	init_struct(int stack_size)
 
 void	init_cost(t_cost *cost)
 {
-	cost->moves = 0;
-	cost->index_nb = 0;
+	cost->moves = -1;
+	cost->index_nb = -1;
 	return ;
 }

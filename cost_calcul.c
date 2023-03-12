@@ -6,14 +6,13 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 23:33:12 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/12 05:15:09 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/12 06:53:31 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "includes.h"
 #include "ft_push_swap.h"
-
 
 int	cost_loop(void)
 {
@@ -29,6 +28,7 @@ int	cost_loop(void)
 		cost_calcul(data->stack_b[i], i, &cost);
 		i++;
 	}
+	dprintf(2, "\nindex choosed :%d\n", cost.index_nb);
 	return (cost.index_nb);
 }
 
@@ -48,8 +48,12 @@ int	cost_calcul(int value, int index, t_cost *cost)
 		count+=data->index;
 	else
 		count += data->len_a - data->index;
-	if (cost->moves == 0)
+	//dprintf(2, "count : %d\n", count);
+	if (cost->moves == -1)
+	{
 		cost->moves = count;
+		cost->index_nb = index;
+	}
 	else
 	{
 		if (count < cost->moves)
