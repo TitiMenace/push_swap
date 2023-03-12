@@ -76,6 +76,7 @@ void	ft_putnbr(int nb);
 /* -------------------------------------------------------------------------- */
 /*                           FILE = ./cost_calcul.c                           */
 /* -------------------------------------------------------------------------- */
+int	rotate_stack_b(int index);
 int	cost_loop(void);
 int	cost_calcul(int value, int index, t_cost *cost);
 

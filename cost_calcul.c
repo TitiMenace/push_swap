@@ -6,13 +6,40 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 23:33:12 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/12 06:53:31 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/12 10:54:33 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "includes.h"
 #include "ft_push_swap.h"
+
+int	rotate_stack_b(int index)
+{
+	t_data	*data;
+	int		i;
+
+	data = _data();
+	i = 0;
+	if (index < (data->len_b / 2) + 1)
+	{
+		while (i < index)
+		{
+			rotate_b(data);
+			i++;
+		}
+	}
+	else
+	{
+		i = index;
+		while (i < data->len_b)
+		{
+			reverse_rotate_b(data);
+			i++;
+		}	
+	}
+	return (0);
+}
 
 int	cost_loop(void)
 {
@@ -28,7 +55,7 @@ int	cost_loop(void)
 		cost_calcul(data->stack_b[i], i, &cost);
 		i++;
 	}
-	dprintf(2, "\nindex choosed :%d\n", cost.index_nb);
+//	dprintf(2, "\nindex choosed :%d\n", cost.index_nb);
 	return (cost.index_nb);
 }
 
@@ -48,7 +75,7 @@ int	cost_calcul(int value, int index, t_cost *cost)
 		count+=data->index;
 	else
 		count += data->len_a - data->index;
-	//dprintf(2, "count : %d\n", count);
+//	dprintf(2, "count : %d\n", count);
 	if (cost->moves == -1)
 	{
 		cost->moves = count;

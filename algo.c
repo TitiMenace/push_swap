@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 01:15:45 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/12 07:01:57 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/12 11:08:59 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,9 +121,12 @@ int	insert_sort(void)
 
 	data = _data();
 	index = cost_loop();
-	parsing_index(data->stack_b[index], data->len_a);
+	if (index != 0)
+		rotate_stack_b(index);
+//	dprintf(2, "\nindex : %d\n", index);
+	parsing_index(data->stack_b[0], data->len_a);
 	i = 0;
-//	dprintf(2, "\nindex : %d\n", data->index);
+//	dprintf(2, "\ndata->index : %d\n", data->index);
 	if (data->index < (data->len_a / 2) + 1)
 	{
 		while (i < data->index)
@@ -162,7 +165,7 @@ int	algo(void)
 	{
 		insert_sort();
 		push_a(data);
-		print_stacks(data->stack_a, data->stack_b, data->len_a, data->len_b);
+//		print_stacks(data->stack_a, data->stack_b, data->len_a, data->len_b);
 	}
 	rotate_stack();
 	return (1);
