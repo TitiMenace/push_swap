@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 00:45:08 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/04 04:59:01 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/11 23:13:58 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ typedef struct s_data
 	int	val_max;
 	int pos_max;
 }			t_data;
+
+typedef struct s_cost
+{
+	int moves;
+	int index_nb;
+}			t_cost;
 
 #endif
 

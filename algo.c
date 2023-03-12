@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 01:15:45 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/11 20:54:36 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/11 23:04:52 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,23 @@ void	rotate_stack(void)
 	data = _data();
 	find_min();
 	i = 0;
-	while (i < data->pos_min)
+	dprintf(2, "\ntest->posmin : %d\n", data->pos_min);
+	if (data->pos_min  < (data->len_a / 2) + 1)
 	{
-		rotate_a(data);
-		i++;
+		while (i < data->pos_min)
+		{	
+			rotate_a(data);
+ 			i++;
+		}
+	}
+	else
+	{
+		i = data->pos_min;
+		while (i < data->len_a)
+		{
+			reverse_rotate_a(data);
+			i++;
+		}
 	}
 }
 
@@ -39,10 +52,10 @@ int	parsing_index(int nb, int stack_size)
 	find_min();
 	find_max();
 	i = data->pos_min;
-//	dprintf(2, "\nval min : %d\n", data->val_min);
-//	dprintf(2, "pos min : %d\n", data->pos_min);
-//	dprintf(2, "val max : %d\n", data->val_max);
-//	dprintf(2, "pos max : %d\n", data->pos_max);
+	dprintf(2, "\nval min : %d\n", data->val_min);
+	dprintf(2, "pos min : %d\n", data->pos_min);
+	dprintf(2, "val max : %d\n", data->val_max);
+	dprintf(2, "pos max : %d\n", data->pos_max);
 	if (nb >= data->val_max)
 	{
 		if (data->pos_max == stack_size - 1)
@@ -107,12 +120,27 @@ int	insert_sort(void)
 	data = _data();
 	parsing_index(data->stack_b[0], data->len_a);
 	i = 0;
+	dprintf(2, "\nindex : %d\n", data->index);
+//	if (data->index < (data->len_a / 2))
+//	{
 	while (i < data->index)
 	{
 		rotate_a(data);
 		i++;
 	}
 	return (1);
+//	}
+//	else
+//	{	
+//		i = data->index;
+//		while (i < data->len_a)
+//		{
+//			reverse_rotate_a(data);
+//			i++;
+//		}
+//		return (1);
+//	}
+//	return (0);
 }
 
 
@@ -133,7 +161,7 @@ int	algo(void)
 	{
 		insert_sort();
 		push_a(data);
-//	print_stacks(data->stack_a, data->stack_b, data->len_a, data->len_b);
+		print_stacks(data->stack_a, data->stack_b, data->len_a, data->len_b);
 	}
 	rotate_stack();
 	return (1);
