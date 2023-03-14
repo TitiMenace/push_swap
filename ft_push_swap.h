@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prototypes.h                                       :+:      :+:    :+:   */
+/*   ft_push_swap.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmechety <rmechety@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by rmechety          #+#    #+#             */
-/*   Updated: 2021/10/19 15:08:54 by rmechety         ###   ########.fr       */
+/*   Updated: 2023/03/14 04:17:44 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int	algo(void);
 /* -------------------------------------------------------------------------- */
 int	reverse_rotate_a(t_data *data);
 int	reverse_rotate_b(t_data *data);
+int reverse_rotate_r(t_data *data);
 
 /* -------------------------------------------------------------------------- */
 /*                           FILE = ./swap_moves.c                            */
@@ -69,6 +70,7 @@ int	swap_b(t_data *data);
 /* -------------------------------------------------------------------------- */
 /*                         FILE = ./push_swap_utils.c                         */
 /* -------------------------------------------------------------------------- */
+int max(int a, int b);
 int	ft_strcmp(char *s1, char *s2);
 void	ft_putchar(char c);
 void	ft_putnbr(int nb);
@@ -76,8 +78,10 @@ void	ft_putnbr(int nb);
 /* -------------------------------------------------------------------------- */
 /*                           FILE = ./cost_calcul.c                           */
 /* -------------------------------------------------------------------------- */
-int	rotate_stack_b(int index);
-int	cost_loop(void);
+int	struct_cost(t_cost *cost, t_tmp *tmp, int best_move);
+int	best_moves(t_tmp *tmp);
+int	setup_stacks(t_cost *cost);
+void	cost_loop(t_cost *cost);
 int	cost_calcul(int value, int index, t_cost *cost);
 
 /* -------------------------------------------------------------------------- */
@@ -99,6 +103,7 @@ int *del_back(int *stack, int len);
 /* -------------------------------------------------------------------------- */
 int	rotate_a(t_data *data);
 int	rotate_b(t_data *data);
+int rotate_r(t_data *data);
 
 /* -------------------------------------------------------------------------- */
 /*                           FILE = ./three_algo.c                            */
@@ -110,6 +115,7 @@ int	three_params(void);
 /* -------------------------------------------------------------------------- */
 bool	init_struct(int stack_size);
 void	init_cost(t_cost *cost);
+void	init_tmp(t_tmp *tmp);
 
 
 #endif

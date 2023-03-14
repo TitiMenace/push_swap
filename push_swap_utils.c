@@ -6,13 +6,21 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 10:56:24 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/24 21:19:00 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/14 03:25:20 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "includes.h"
 #include "ft_push_swap.h"
+
+int max(int a, int b)
+{
+	if (a > b)
+		return (a);
+	else
+		return (b);
+}
 
 int	ft_strcmp(char *s1, char *s2)
 {

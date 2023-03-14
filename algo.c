@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 01:15:45 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/12 11:08:59 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/13 23:45:03 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	rotate_stack(void)
 		while (i < data->pos_min)
 		{	
 			rotate_a(data);
+			write(1, "ra\n", 3);
  			i++;
 		}
 	}
@@ -38,6 +39,7 @@ void	rotate_stack(void)
 		while (i < data->len_a)
 		{
 			reverse_rotate_a(data);
+			write(1, "rra\n", 4);
 			i++;
 		}
 	}
@@ -116,34 +118,13 @@ int	parsing_index(int nb, int stack_size)
 int	insert_sort(void)
 {
 	t_data	*data;
-	int		i;
-	int index;
+	t_cost	cost;
 
+	init_cost(&cost);
 	data = _data();
-	index = cost_loop();
-	if (index != 0)
-		rotate_stack_b(index);
-//	dprintf(2, "\nindex : %d\n", index);
-	parsing_index(data->stack_b[0], data->len_a);
-	i = 0;
-//	dprintf(2, "\ndata->index : %d\n", data->index);
-	if (data->index < (data->len_a / 2) + 1)
-	{
-		while (i < data->index)
-		{
-			rotate_a(data);
-			i++;
-		}
-	}
-	else
-	{	
-		i = data->index;
-		while (i < data->len_a)
-		{
-			reverse_rotate_a(data);
-			i++;
-		}
-	}
+	cost_loop(&cost);
+	setup_stacks(&cost);
+	
 	return (0);
 }
 
