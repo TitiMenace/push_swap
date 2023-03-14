@@ -117,11 +117,9 @@ int	parsing_index(int nb, int stack_size)
 
 int	insert_sort(void)
 {
-	t_data	*data;
 	t_cost	cost;
 
 	init_cost(&cost);
-	data = _data();
 	cost_loop(&cost);
 	setup_stacks(&cost);
 	

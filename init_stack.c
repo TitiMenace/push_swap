@@ -27,7 +27,11 @@ int	check_av(char *str)
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 		i++;
 	if (str[i] == '\0')
+	{
+		if (str[i - 1] == '-')
+			return (-1);
 		return (1);
+	}
 	else
 		return (-1);
 }
