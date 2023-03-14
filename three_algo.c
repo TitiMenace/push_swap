@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 22:08:34 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/13 23:49:21 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/14 07:15:29 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 #include "includes.h"
 #include "ft_push_swap.h"
 
+int	two_params(void)
+{
+	t_data *data;
+
+	data = _data();
+	if (data->stack_a[0] > data->stack_a[1])
+		swap_a(data);
+	return (1);
+}
 
 int	three_params(void)
 {

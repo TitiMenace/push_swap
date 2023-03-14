@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 18:47:53 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/13 23:50:43 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/14 07:16:02 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ int	push_swap(int ac)
 {
 	if (ac == 4)
 		three_params();
+	else if (ac == 2)
+		return (1);
+	else if (ac == 3)
+		two_params();
 	else
 		algo();
 	return (1);
