@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 18:47:53 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/15 04:07:01 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/15 04:29:06 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	check_multiple(int *stack_a, int stack_size)
 	while (i < stack_size)
 	{
 		j = i + 1;
-		while(j < stack_size)
+		while (j < stack_size)
 		{
 			if (stack_a[i] == stack_a[j])
 				return (-1);
