@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 02:03:16 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/14 04:16:34 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/15 02:53:44 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 #include "includes.h"
 #include "ft_push_swap.h"
 
-
 bool	init_struct(int stack_size)
 {
 	t_data	*data;
-	
+
 	data = _data();
 	data->stack_a = malloc(sizeof(int) * stack_size);
 	if (!data->stack_a)

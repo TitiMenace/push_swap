@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 23:33:12 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/15 02:32:58 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/15 02:36:14 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int	best_moves(t_tmp *tmp)
 {
 	int	best_move;
-	int pars;
+	int	pars;
 
 	best_move = tmp->tmp_ra + tmp->tmp_rrb;
 	pars = max(tmp->tmp_ra, tmp->tmp_rb);
@@ -56,7 +56,7 @@ int	cost_calcul(int value, int index, t_cost *cost)
 	init_tmp(&tmp);
 	count = 0;
 	tmp.tmp_rb = index;
-	tmp.tmp_rrb = data->len_b - index; 
+	tmp.tmp_rrb = data->len_b - index;
 	parsing_index(value, data->len_a);
 	tmp.tmp_ra = data->index;
 	tmp.tmp_rra = data->len_a - data->index;

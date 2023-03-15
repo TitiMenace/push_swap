@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 23:58:52 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/15 00:54:31 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/15 02:41:48 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "struct.h"
@@ -15,7 +15,7 @@
 
 int	*add_front(int *stack, int len, int nb)
 {
-	int *out;
+	int	*out;
 	int	i;
 
 	out = malloc(sizeof(int) * (len + 1));
@@ -36,7 +36,7 @@ int	*add_front(int *stack, int len, int nb)
 int	*add_back(int *stack, int len, int nb)
 {	
 	int	*out;
-	int i;
+	int	i;
 
 	out = malloc(sizeof(int) * (len + 1));
 	if (!out)
@@ -57,7 +57,7 @@ int	*del_front(int *stack, int len)
 {
 	int	*out;
 	int	i;
- 
+
 	out = malloc(sizeof(int) * len - 1);
 	if (!out)
 		return (NULL);
@@ -72,7 +72,7 @@ int	*del_front(int *stack, int len)
 	return (out);
 }
 
-int *del_back(int *stack, int len)
+int	*del_back(int *stack, int len)
 {
 	int	*out;
 	int	i;

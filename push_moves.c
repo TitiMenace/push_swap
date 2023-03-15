@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 05:31:17 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/24 20:07:20 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/15 02:39:27 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ int	push_b(t_data *data)
 			return (0);
 		data->len_b++;
 		data->stack_a = del_front(data->stack_a, data->len_a);
-			if (!data->stack_a)
-				return (0);
+		if (!data->stack_a)
+			return (0);
 		data->len_a--;
 	}
 	else

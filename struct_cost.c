@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 02:26:46 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/15 02:32:51 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/15 02:39:53 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	pattern_4(t_cost *cost, t_tmp *tmp)
 
 int	struct_cost(t_cost *cost, t_tmp *tmp, int best_move)
 {
-	if ( best_move == tmp->tmp_ra + tmp->tmp_rrb)
+	if (best_move == tmp->tmp_ra + tmp->tmp_rrb)
 		pattern_1(cost, tmp);
 	else if (best_move == max(tmp->tmp_ra, tmp->tmp_rb))
 		pattern_2(cost, tmp);
