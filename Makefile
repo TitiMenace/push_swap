@@ -6,7 +6,7 @@
 #    By: tschecro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 01:52:49 by tschecro          #+#    #+#              #
-#    Updated: 2023/03/15 04:26:20 by tschecro         ###   ########.fr        #
+#    Updated: 2023/03/15 06:50:38 by tschecro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,15 @@ SRC		=	./init_struct.c ./moves_utils.c ./push_swap_utils.c \
 			./struct_cost.c ./push_swap.c
 
 
+SRCS_DIR = src
+
+
+
 HEADER	=	ft_push_swap.h \
 			includes.h \
 			struct.h 
 
-OBJ		=	$(SRC:.c=.o)
+OBJ		=	$(addprefix $(SRCS_DIR)/$(SRC))
 
 NAME	=	push_swap	
 
