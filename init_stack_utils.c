@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   init_stack_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 10:56:24 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/15 02:09:01 by tschecro         ###   ########.fr       */
+/*   Created: 2023/03/15 01:15:56 by tschecro          #+#    #+#             */
+/*   Updated: 2023/03/15 01:22:10 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,42 @@
 #include "includes.h"
 #include "ft_push_swap.h"
 
-int	max(int a, int b)
+int	ft_strcmp(char *s1, char *s2)
 {
-	if (a > b)
-		return (a);
-	else
-		return (b);
-}
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putnbr(int nb)
-{
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	if (nb < 0)
-	{
-		i = nb * -1;
-		ft_putchar('-');
-	}
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
+}
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+int	check_min(int count, char *min, char *str)
+{
+	if (count < 11)
+		return (1);
+	if (count > 11)
+		return (-1);
 	else
-		i = nb;
-	if (i <= 9)
-		ft_putchar(i + '0');
+		return (ft_strcmp(min, str));
+}
+
+int	check_max(int count, char *max, char *str)
+{
+	if (count < 10)
+		return (1);
+	if (count > 10)
+		return (-1);
 	else
-	{
-		ft_putnbr(i / 10);
-		ft_putnbr(i % 10);
-	}
+		return (ft_strcmp(max, str));
 }

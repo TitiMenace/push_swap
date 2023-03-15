@@ -1,19 +1,18 @@
-/************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 08:02:56 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/02 00:57:07 by tschecro         ###   ########.fr       */
+/*   Created: 2023/03/15 01:04:49 by tschecro          #+#    #+#             */
+/*   Updated: 2023/03/15 01:24:18 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "includes.h"
 #include "ft_push_swap.h"
-
 
 int	check_av(char *str)
 {
@@ -36,17 +35,6 @@ int	check_av(char *str)
 		return (-1);
 }
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-
-	while (str[i])
-		i++;
-	return (i);
-}
-
 int	check_m(char *str)
 {
 	int		i;
@@ -59,23 +47,10 @@ int	check_m(char *str)
 	min = "-2147483648";
 	i = 0;
 	if (str[i] == '-')
-	{
-		if (count < 11)
-			return (1);
-		if (count > 11)
-			return (-1);
-		else
-			return (ft_strcmp(min, str));
-	}
+		return (check_max(count, min, str));
 	else
-	{
-		if (count < 10)
-			return (1);
-		if (count > 10)
-			return (-1);
-		else
-			return (ft_strcmp(max, str));
-	}
+		return (check_min(count, max, str));
+	return (0);
 }		
 
 int	ft_atoi(char *str)
@@ -92,7 +67,7 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	result = 0;
-	while(str[i])
+	while (str[i])
 	{
 		result = result * 10 + str[i] - 48;
 		i++;
@@ -100,12 +75,10 @@ int	ft_atoi(char *str)
 	return (sign * result);
 }
 
-
-
 bool	init_stack(char **str)
 {
 	t_data	*data;
-	int	i;
+	int		i;
 
 	data = _data();
 	i = 0;
@@ -114,11 +87,13 @@ bool	init_stack(char **str)
 		if (check_av(str[i + 1]) == -1)
 		{
 			free(data->stack_a);
+			free(data->stack_b);
 			return (false);
 		}
 		if (check_m(str[i + 1]) < 0)
 		{
 			free(data->stack_a);
+			free(data->stack_b);
 			return (false);
 		}
 		data->stack_a[i] = ft_atoi(str[i + 1]);

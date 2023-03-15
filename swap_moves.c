@@ -6,14 +6,13 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 05:23:50 by tschecro          #+#    #+#             */
-/*   Updated: 2023/02/24 20:08:20 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/15 02:08:45 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "includes.h"
 #include "ft_push_swap.h"
-
 
 int	swap_a(t_data *data)
 {
