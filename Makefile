@@ -6,7 +6,7 @@
 #    By: tschecro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 01:52:49 by tschecro          #+#    #+#              #
-#    Updated: 2023/03/15 02:33:39 by tschecro         ###   ########.fr        #
+#    Updated: 2023/03/15 04:26:20 by tschecro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRC		=	./init_struct.c ./moves_utils.c ./push_swap_utils.c \
 			./init_stack.c ./rotate.c ./swap_moves.c ./three_algo.c \
 			./debug_utils.c ./algo.c ./find_values.c ./cost_calcul.c \
 			./parsing_index.c init_stack_utils.c ./setup_stacks.c \
-			./struct_cost.c
+			./struct_cost.c ./push_swap.c
 
 
 HEADER	=	ft_push_swap.h \
@@ -24,14 +24,14 @@ HEADER	=	ft_push_swap.h \
 
 OBJ		=	$(SRC:.c=.o)
 
-NAME	=	libpushswap.a	
+NAME	=	push_swap	
 
 CC		=	cc
 
 all		:	$(NAME)
 
 $(NAME)	:	$(OBJ)
-			ar rc $(NAME) $(OBJ)
+			$(CC) $(OBJ) -o $(NAME)
 
 %.o		:	%.c
 			$(CC) -Wall -Wextra -Werror -g3 -c $< -o $@
