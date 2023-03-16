@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 22:08:34 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/15 02:53:09 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/16 01:47:55 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ int	two_params(void)
 
 	data = _data();
 	if (data->stack_a[0] > data->stack_a[1])
+	{
 		swap_a(data);
+		write(1, "sa\n", 3);
+	}
 	return (1);
 }
 
@@ -35,6 +38,7 @@ int	three_pattern_1(void)
 		reverse_rotate_a(data);
 		write(1, "rra\n", 4);
 		swap_a(data);
+		write(1, "sa\n", 3);
 		return (1);
 	}
 	if (data->stack_a[0] > data->stack_a[2])
@@ -65,6 +69,7 @@ int	three_pattern_2(void)
 		rotate_a(data);
 		write(1, "ra\n", 3);
 		swap_a(data);
+		write(1, "sa\n", 3);
 		return (1);
 	}
 	return (0);

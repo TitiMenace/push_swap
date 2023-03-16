@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 01:15:45 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/15 02:04:57 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/16 01:49:24 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int	algo(void)
 	while (i > 3)
 	{
 		push_b(data);
+		write(1, "pb\n", 3);
 		i--;
 	}
 	three_params();
@@ -70,6 +71,7 @@ int	algo(void)
 	{
 		insert_sort();
 		push_a(data);
+		write(1, "pa\n", 3);
 	}
 	rotate_stack();
 	return (1);

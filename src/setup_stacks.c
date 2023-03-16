@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 02:14:56 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/15 02:23:01 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/16 01:50:56 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ void	setup_rotate_rotate(t_cost *cost)
 	while (cost->ra != 0 && cost->rb != 0)
 	{
 		rotate_r(data);
+		write(1, "rr\n", 3);
 		cost->ra--;
 		cost->rb--;
 	}
 	while (cost->rra != 0 && cost->rrb != 0)
 	{
 		reverse_rotate_r(data);
+		write(1, "rrr\n", 4);
 		cost->rra--;
 		cost->rrb--;
 	}

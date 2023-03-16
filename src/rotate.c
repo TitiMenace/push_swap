@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 04:33:59 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/15 02:44:26 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/16 01:53:23 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,5 @@ int	rotate_r(t_data *data)
 {
 	rotate_a(data);
 	rotate_b(data);
-	return (write(1, "rr\n", 3));
+	return (1);
 }

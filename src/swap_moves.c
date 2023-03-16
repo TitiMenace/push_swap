@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 05:23:50 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/15 02:08:45 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/16 01:56:50 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	swap_a(t_data *data)
 	temp = data->stack_a[0];
 	data->stack_a[0] = data->stack_a[1];
 	data->stack_a[1] = temp;
-	return (write(1, "sa\n", 3));
+	return (1);
 }
 
 int	swap_b(t_data *data)
@@ -35,5 +35,12 @@ int	swap_b(t_data *data)
 	temp = data->stack_b[0];
 	data->stack_b[0] = data->stack_b[1];
 	data->stack_b[1] = temp;
-	return (write(1, "sb\n", 3));
+	return (1);
+}
+
+int	swap_s(t_data *data)
+{
+	swap_a(data);
+	swap_b(data);
+	return (1);
 }

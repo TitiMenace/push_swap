@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 05:31:17 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/15 02:39:27 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/16 01:52:01 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	push_a(t_data *data)
 	}
 	else
 		return (0);
-	return (write(1, "pa\n", 3));
+	return (1);
 }
 
 int	push_b(t_data *data)
@@ -47,5 +47,5 @@ int	push_b(t_data *data)
 	}
 	else
 		return (0);
-	return (write(1, "pb\n", 3));
+	return (1);
 }
