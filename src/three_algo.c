@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 22:08:34 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/16 01:47:55 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/18 00:20:44 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,10 @@ int	three_pattern_2(void)
 			return (write(1, "ra\n", 3));
 		}
 		else
-			return (swap_a(data));
+		{
+			swap_a(data);
+			return (write(1, "sa\n", 3));
+		}
 	}
 	else
 	{
