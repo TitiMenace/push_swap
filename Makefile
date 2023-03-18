@@ -6,7 +6,7 @@
 #    By: tschecro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 01:52:49 by tschecro          #+#    #+#              #
-#    Updated: 2023/03/18 02:24:26 by tschecro         ###   ########.fr        #
+#    Updated: 2023/03/18 04:26:58 by tschecro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,10 +48,12 @@ all		:	$(NAME)
 
 $(NAME)	:	$(OBJ)
 			$(CC) $(OBJ) -o $(NAME)
+			@echo "\033[1;32m\nDone!\033[0m"
 
 $(OBJ_DIR)/%.o 		:	$(SRC_DIR)/%.c
-			mkdir -p $(OBJ_DIR)
-			$(CC) -Wall -Wextra -Werror -g3 -c -I $(HEADER) $< -o $@
+						@printf "\033[0;33m Generating push_swap object... %-38.38s \r" $@
+						@mkdir -p $(OBJ_DIR)
+						@$(CC) -Wall -Wextra -Werror -g3 -c -I $(HEADER) $< -o $@
 
 clean	:
 			rm -rf $(OBJ_DIR)
@@ -65,10 +67,12 @@ re		:	fclean all
 
 bonus	:	$(OBJ_BONUS)
 			$(CC) $(OBJ_BONUS) -o checker
+			@echo "\033[1;32m\nDone!\033[0m"
 
 $(OBJ_BONUS_DIR)/%.o 		:	$(SRC_DIR_BONUS)/%.c
-								mkdir -p $(OBJ_BONUS_DIR)
-								$(CC) -Wall -Wextra -Werror -g3 -c -I $(HEADER) $< -o $@
+								@printf "\033[0;33mGenerating libft object... %-38.38s \r" $@
+								@mkdir -p $(OBJ_BONUS_DIR)
+								@$(CC) -Wall -Wextra -Werror -g3 -c -I $(HEADER) $< -o $@
 
 
 .PHONY	:	all clean fclean re

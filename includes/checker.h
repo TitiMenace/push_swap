@@ -6,7 +6,7 @@
 /*   By: rmechety <rmechety@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by rmechety          #+#    #+#             */
-/*   Updated: 2023/03/18 03:00:11 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/18 04:54:11 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_strjoin(char *remain, char *buffer);
 /*                         FILE = src_bonus/checker.c                         */
 /* -------------------------------------------------------------------------- */
 bool	check_sort(void);
-int	read_loop();
+char	*read_loop();
 int	check_instructions(char *str);
 int		main(int ac, char **av);
 
