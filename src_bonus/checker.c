@@ -6,13 +6,13 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 06:30:08 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/16 05:34:03 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/18 02:56:05 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
-#include "ft_push_swap.h"
-#include "include.h"
+#include "checker.h"
+#include "includes.h"
+#include "struct.h"
 
 bool	check_sort(void)
 {
@@ -25,7 +25,7 @@ bool	check_sort(void)
 	j = i + 1;
 	while (j < data->len_a)
 	{
-		if (data->stack[i] > data->stack_a[j])
+		if (data->stack_a[i] > data->stack_a[j])
 		{
 			write(1, "KO\n", 3);
 			return (false);
@@ -40,23 +40,24 @@ bool	check_sort(void)
 int	read_loop()
 {
 	char *str;
-	char *buffer
+	char *buffer;
 
-	buffer "";
+	buffer = "";
+	str = "";
 	while (str)
 	{
 		str = get_next_line(0);
-		if (!check_instructions)
+		if (!check_instructions(str))
 		{
 			write(1, "Error\n", 6);
-			return (free(str), free(buffer));
+			return (free(str), free(buffer), 1);
 		}
-		if (*str == NULL)
+		if (str == NULL)
 		{
 			check_sort();
-			return (free(str), free(buffer));
+			return (free(str), free(buffer), 1);
 		}
-		buffer = ft_strcat(buffer, str);
+		buffer = ft_strjoin(buffer, str);
 	}
 	return (free(str), free(buffer), 1);
 }
@@ -66,26 +67,26 @@ int	check_instructions(char *str)
 {	
 	if (ft_strcmp(str, "sa") == 0)
 		return(true);
-	if (ft_strcmp(str, "sb") == 0)
+	else if (ft_strcmp(str, "sb") == 0)
 		return(true);
-	if (ft_strcmp(str, "ss") == 0)
+	else if (ft_strcmp(str, "ss") == 0)
 		return (true);
-	if (ft_strcmp(str, "ra") == 0)
+	else if (ft_strcmp(str, "ra") == 0)
 		return (true);
-	if (ft_strcmp(str, "rb") == 0)
+	else if (ft_strcmp(str, "rb") == 0)
 		return (true);
-	if (ft_strcmp(str, "rr") == 0)
+	else if (ft_strcmp(str, "rr") == 0)
 		return (true);
-	if (ft_strcmp(str, "rra") == 0)
+	else if (ft_strcmp(str, "rra") == 0)
 		return (true);
-	if (ft_strcmp(str, "rrb") == 0)
+	else if (ft_strcmp(str, "rrb") == 0)
 		return (true);
-	if (ft_strcmp(str, "rrr") == 0)
+	else if (ft_strcmp(str, "rrr") == 0)
 		return (true);
 	return (false);
 }
 
-int	main(void)
+int	main(int ac, char **av)
 {
 	t_data	*data;
 

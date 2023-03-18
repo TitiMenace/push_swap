@@ -6,33 +6,13 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 18:47:53 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/15 04:29:06 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/18 02:39:55 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "includes.h"
 #include "ft_push_swap.h"
-
-int	check_multiple(int *stack_a, int stack_size)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < stack_size)
-	{
-		j = i + 1;
-		while (j < stack_size)
-		{
-			if (stack_a[i] == stack_a[j])
-				return (-1);
-			j++;
-		}
-		i++;
-	}
-	return (1);
-}
 
 int	push_swap(int ac)
 {

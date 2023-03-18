@@ -6,23 +6,13 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 02:06:21 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/15 07:31:25 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/18 02:58:14 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	if (!str)
-		return (0);
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "checker.h"
+#include "includes.h"
+#include "struct.h"
 
 char	*ft_strndup(char *str)
 {

@@ -6,9 +6,11 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 02:52:16 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/16 01:57:39 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/18 02:44:58 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdbool.h>
 
 #ifndef FT_PUSH_SWAP_H
 # define FT_PUSH_SWAP_H
@@ -36,7 +38,6 @@ void	print_tab(int *stack, int len);
 /* -------------------------------------------------------------------------- */
 /*                            FILE = ./push_swap.c                            */
 /* -------------------------------------------------------------------------- */
-int		check_mulitple(int *stack_a, int stack_size);
 int		push_swap(int ac);
 int		main(int ac, char **av);
 
@@ -89,6 +90,7 @@ int		swap_s(t_data *data);
 int		max(int a, int b);
 void	ft_putchar(char c);
 void	ft_putnbr(int nb);
+int		check_multiple(int *stack_a, int stack_size);
 
 /* -------------------------------------------------------------------------- */
 /*                           FILE = ./cost_calcul.c                           */

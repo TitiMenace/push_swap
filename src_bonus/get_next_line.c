@@ -6,11 +6,13 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 02:05:36 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/15 07:31:05 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/18 02:57:42 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
+#include "checker.h"
+#include "includes.h"
+#include "struct.h"
 
 char	*ft_fill_line(char *buffer, int fd, char **remain)
 {
@@ -74,18 +76,3 @@ char	*get_next_line(int fd)
 	remain = clean_remain(remain);
 	return (free(buffer), line);
 }
-/*
-#include <stdio.h>
-
-int	main()
-{
-	int fd;
-	char *str;
-	
-	fd = open("get_next_line.h", O_RDONLY);
-	str = get_next_line(fd);
-	printf("%s", str);
-	
-	return (0);
-}
-*/
