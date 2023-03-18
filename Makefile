@@ -6,7 +6,7 @@
 #    By: tschecro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 01:52:49 by tschecro          #+#    #+#              #
-#    Updated: 2023/03/18 04:26:58 by tschecro         ###   ########.fr        #
+#    Updated: 2023/03/18 06:43:03 by tschecro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_FILES		=	init_struct.c moves_utils.c push_swap_utils.c \
 SRC_FILES_BONUS	=	checker.c get_next_line.c get_next_line_utils.c init_struct.c \
 					moves_utils.c push_swap_utils.c singletone.c push_moves.c \
 					reverse_rotate.c init_stack.c rotate.c swap_moves.c \
-					init_stack_utils.c
+					init_stack_utils.c ft_split.c
 
 SRC_DIR_BONUS	= src_bonus
 

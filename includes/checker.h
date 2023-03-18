@@ -6,7 +6,7 @@
 /*   By: rmechety <rmechety@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by rmechety          #+#    #+#             */
-/*   Updated: 2023/03/18 04:54:11 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/18 06:44:13 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,9 @@ int	rotate_r(t_data *data);
 bool	init_struct(int stack_size);
 void	init_cost(t_cost *cost);
 void	init_tmp(t_tmp *tmp);
-
+/* -------------------------------------------------------------------------- */
+/*                       FILE = src_bonus/ft_split.c                       */
+/* -------------------------------------------------------------------------- */
+char	**ft_split(char const *s, char c);
 
 #endif
