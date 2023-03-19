@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 06:30:08 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/19 04:49:11 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/19 06:37:00 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*read_loop(void)
 		if (!str)
 			break ;
 		if (!check_instructions(str))
-			return (free(str), buffer);
+			return (free(str), NULL);
 		buffer = ft_strjoin(buffer, str);
 		free(str);
 	}
@@ -72,6 +72,8 @@ int	main(int ac, char **av)
 	if (check_multiple(data->stack_a, data->len_a) == -1)
 		return (write(1, "Error\n", 6));
 	buffer = read_loop();
+	if (!buffer)
+		return (free(buffer), write(1, "Error\n", 6));
 	actions = ft_split(buffer, '\n');
 	exec_moves(actions, data);
 	check_sort();
