@@ -3,74 +3,81 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmechety <rmechety@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 12:52:24 by rmechety          #+#    #+#             */
-/*   Updated: 2023/03/18 06:44:13 by tschecro         ###   ########.fr       */
+/*   Created: 2023/03/19 03:06:11 by tschecro          #+#    #+#             */
+/*   Updated: 2023/03/19 04:44:54 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
 
-#include <stdbool.h>
-#include <struct.h>
+# include <stdbool.h>
+# include <struct.h>
 
-#ifndef	BUFFER_SIZE
-# define BUFFER_SIZE 42
-#endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+/* -------------------------------------------------------------------------- */
+/*                       FILE = src_bonus/checker_utils.c                     */
+/* -------------------------------------------------------------------------- */
+int		check_instructions(char *str);
+int		instructions(char *str, t_data *data);
+int		exec_moves(char **actions, t_data *data);
 
 /* -------------------------------------------------------------------------- */
 /*                       FILE = src_bonus/init_stack.c                        */
 /* -------------------------------------------------------------------------- */
-int	check_av(char *str);
-int	check_m(char *str);
-int	ft_atoi(char *str);
+int		check_av(char *str);
+int		check_m(char *str);
+int		ft_atoi(char *str);
 bool	init_stack(char **str);
 
 /* -------------------------------------------------------------------------- */
 /*                    FILE = src_bonus/init_stack_utils.c                     */
 /* -------------------------------------------------------------------------- */
-int	ft_strcmp(char *s1, char *s2);
-int	ft_strlen(char *str);
-int	check_min(int count, char *min, char *str);
-int	check_max(int count, char *max, char *str);
+int		ft_strcmp(char *s1, char *s2);
+int		ft_strlen(char *str);
+int		check_min(int count, char *min, char *str);
+int		check_max(int count, char *max, char *str);
 
 /* -------------------------------------------------------------------------- */
 /*                       FILE = src_bonus/singletone.c                        */
 /* -------------------------------------------------------------------------- */
 void	ft_bzero(void *ptr, int size);
 t_data	*_data(void);
+void	free_all(char **actions, char *buffer, int *stack_a, int *stack_b);
 
 /* -------------------------------------------------------------------------- */
 /*                   FILE = src_bonus/get_next_line_utils.c                   */
 /* -------------------------------------------------------------------------- */
-int	ft_strlen(char *str);
+int		ft_strlen(char *str);
 char	*ft_strndup(char *str);
-int	check_buff(char *buffer, char c);
+int		check_buff(char *buffer, char c);
 char	*ft_strjoin(char *remain, char *buffer);
 
 /* -------------------------------------------------------------------------- */
 /*                         FILE = src_bonus/checker.c                         */
 /* -------------------------------------------------------------------------- */
 bool	check_sort(void);
-char	*read_loop();
-int	check_instructions(char *str);
+char	*read_loop(void);
 int		main(int ac, char **av);
 
 /* -------------------------------------------------------------------------- */
 /*                     FILE = src_bonus/reverse_rotate.c                      */
 /* -------------------------------------------------------------------------- */
-int	reverse_rotate_a(t_data *data);
-int	reverse_rotate_b(t_data *data);
-int	reverse_rotate_r(t_data *data);
+int		reverse_rotate_a(t_data *data);
+int		reverse_rotate_b(t_data *data);
+int		reverse_rotate_r(t_data *data);
 
 /* -------------------------------------------------------------------------- */
 /*                       FILE = src_bonus/swap_moves.c                        */
 /* -------------------------------------------------------------------------- */
-int	swap_a(t_data *data);
-int	swap_b(t_data *data);
-int	swap_s(t_data *data);
+int		swap_a(t_data *data);
+int		swap_b(t_data *data);
+int		swap_s(t_data *data);
 
 /* -------------------------------------------------------------------------- */
 /*                      FILE = src_bonus/get_next_line.c                      */
@@ -82,7 +89,7 @@ char	*get_next_line(int fd);
 /* -------------------------------------------------------------------------- */
 /*                     FILE = src_bonus/push_swap_utils.c                     */
 /* -------------------------------------------------------------------------- */
-int	max(int a, int b);
+int		max(int a, int b);
 void	ft_putchar(char c);
 void	ft_putnbr(int nb);
 int		check_multiple(int *stack_a, int stack_size);
@@ -90,23 +97,23 @@ int		check_multiple(int *stack_a, int stack_size);
 /* -------------------------------------------------------------------------- */
 /*                       FILE = src_bonus/push_moves.c                        */
 /* -------------------------------------------------------------------------- */
-int	push_a(t_data *data);
-int	push_b(t_data *data);
+int		push_a(t_data *data);
+int		push_b(t_data *data);
 
 /* -------------------------------------------------------------------------- */
 /*                       FILE = src_bonus/moves_utils.c                       */
 /* -------------------------------------------------------------------------- */
-int	*add_front(int *stack, int len, int nb);
-int	*add_back(int *stack, int len, int nb);
-int	*del_front(int *stack, int len);
-int	*del_back(int *stack, int len);
+int		*add_front(int *stack, int len, int nb);
+int		*add_back(int *stack, int len, int nb);
+int		*del_front(int *stack, int len);
+int		*del_back(int *stack, int len);
 
 /* -------------------------------------------------------------------------- */
 /*                         FILE = src_bonus/rotate.c                          */
 /* -------------------------------------------------------------------------- */
-int	rotate_a(t_data *data);
-int	rotate_b(t_data *data);
-int	rotate_r(t_data *data);
+int		rotate_a(t_data *data);
+int		rotate_b(t_data *data);
+int		rotate_r(t_data *data);
 
 /* -------------------------------------------------------------------------- */
 /*                       FILE = src_bonus/init_struct.c                       */

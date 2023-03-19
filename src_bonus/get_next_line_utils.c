@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 02:06:21 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/18 05:17:58 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/19 03:36:37 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_strjoin(char *remain, char *buffer)
 	j = 0;
 	i = 0;
 	if (!remain)
-		remain = ft_strndup("\0");
+		remain = ft_strndup("");
 	if (!buffer)
 		return (NULL);
 	line = malloc(sizeof(char) * (ft_strlen(buffer) + ft_strlen(remain) + 1));

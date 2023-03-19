@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 01:14:09 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/15 01:25:40 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/19 04:35:51 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ void	ft_bzero(void *ptr, int size)
 		((unsigned char *)ptr)[i] = 0;
 		i++;
 	}
+}
+
+void	free_all(char **actions, char *buffer, int *stack_a, int *stack_b)
+{
+	free(actions);
+	free(buffer);
+	free(stack_a);
+	free(stack_b);
 }
 
 t_data	*_data(void)
