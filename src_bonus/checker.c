@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 06:30:08 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/18 07:16:49 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/19 02:10:15 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,12 +143,6 @@ int	main(int ac, char **av)
 	while (actions[i])
 	{
 		instructions(actions[i]);
-		i++;
-	}
-	i = 0;
-	while (i < data->len_a)
-	{
-		dprintf(2, "%d\n", data->stack_a[i]);
 		i++;
 	}
 	check_sort();

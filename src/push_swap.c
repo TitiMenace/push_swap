@@ -6,13 +6,32 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 18:47:53 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/18 02:39:55 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/19 02:22:59 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "includes.h"
 #include "ft_push_swap.h"
+
+bool	check_sort(void)
+{
+	t_data	*data;
+	int		i;
+	int		j;
+
+	data = _data();
+	i = 0;
+	j = i + 1;
+	while (j < data->len_a)
+	{
+		if (data->stack_a[i] > data->stack_a[j])
+			return (false);
+		i++;
+		j++;
+	}
+	return (true);
+}
 
 int	push_swap(int ac)
 {
@@ -45,7 +64,8 @@ int	main(int ac, char **av)
 		free(data->stack_b);
 		return (write(1, "Error\n", 6));
 	}
-	push_swap(ac);
+	if (!check_sort())
+		push_swap(ac);
 	free(data->stack_a);
 	free(data->stack_b);
 	return (0);
