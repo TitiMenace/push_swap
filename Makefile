@@ -6,7 +6,7 @@
 #    By: tschecro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 01:52:49 by tschecro          #+#    #+#              #
-#    Updated: 2023/03/19 04:45:26 by tschecro         ###   ########.fr        #
+#    Updated: 2023/03/27 16:51:54 by tschecro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,8 @@ OBJ_BONUS = 	$(patsubst $(SRC_DIR_BONUS)/%.c, $(OBJ_BONUS_DIR)/%.o, $(SRC_BONUS)
 
 NAME	=	push_swap	
 
+BONUS_NAME = checker
+
 CC		=	cc
 
 all		:	$(NAME)
@@ -65,9 +67,12 @@ fclean	:	clean
 
 re		:	fclean all
 
-bonus	:	$(OBJ_BONUS)
-			$(CC) $(OBJ_BONUS) -o checker
-			@echo "\033[1;32m\nDone!\033[0m"
+
+bonus	: $(BONUS_NAME)
+
+$(BONUS_NAME)	:	$(OBJ_BONUS)
+					$(CC) $(OBJ_BONUS) -o checker
+					@echo "\033[1;32m\nDone!\033[0m"
 
 $(OBJ_BONUS_DIR)/%.o 		:	$(SRC_DIR_BONUS)/%.c
 								@printf "\033[0;33mGenerating libft object... %-38.38s \r" $@
