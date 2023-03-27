@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 01:04:49 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/18 03:01:15 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/03/27 20:27:38 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ int	check_m(char *str)
 	min = "-2147483648";
 	i = 0;
 	if (str[i] == '-')
-		return (check_max(count, min, str));
+		return (check_min(count, min, str));
 	else
-		return (check_min(count, max, str));
+		return (check_max(count, max, str));
 	return (0);
 }		
 
