@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 03:06:11 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/19 04:44:54 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/04/03 02:43:12 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char	*ft_strjoin(char *remain, char *buffer);
 /* -------------------------------------------------------------------------- */
 /*                         FILE = src_bonus/checker.c                         */
 /* -------------------------------------------------------------------------- */
-bool	check_sort(void);
+bool	check_sort(int nb_arg);
 char	*read_loop(void);
 int		main(int ac, char **av);
 

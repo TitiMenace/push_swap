@@ -6,7 +6,7 @@
 /*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 06:30:08 by tschecro          #+#    #+#             */
-/*   Updated: 2023/03/27 14:54:19 by tschecro         ###   ########.fr       */
+/*   Updated: 2023/04/03 02:43:13 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,18 @@
 #include "includes.h"
 #include "struct.h"
 
-bool	check_sort(void)
+bool	check_sort(int nb_arg)
 {
 	t_data	*data;
 	int		i;
 	int		j;
 
 	data = _data();
+	if (data->len_a < nb_arg)
+	{
+		write(1, "KO\n", 3);
+		return (false);
+	}
 	i = 0;
 	j = i + 1;
 	while (j < data->len_a)
@@ -79,7 +84,7 @@ int	main(int ac, char **av)
 	}
 	actions = ft_split(buffer, '\n');
 	exec_moves(actions, data);
-	check_sort();
+	check_sort(ac - 1);
 	free_all(actions, buffer, data->stack_a, data->stack_b);
 	return (0);
 }
